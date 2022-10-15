@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="branch">
+        <mat-form-field appearance="outline">
+            <mat-label translate>changeLanguage</mat-label>
+            <mat-select #language (selectionChange)="onChange(language.value)">
+                <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang">{{
+                    lang | translate
+                    }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="formgroup">
+            <span>
+                <legend>{{"BranchInverter" | translate}}</legend>
+            </span>
+            <form [formGroup]="loginForm">
+                <div class="margin-top">
+                        <mat-form-field appearance="outline">
+                            <mat-label translate>jiraName</mat-label>
+                            <input matInput placeholder="{{'jiraNamePlaceholder' | translate}}"
+                                formControlName="jiraName">
+                            <mat-error>
+                                <p *ngIf="f['jiraName'].errors && f['jiraName'].errors['required']" translate>
+                                    required
+                                </p>
+                                <p *ngIf="f['jiraName'].errors && f['jiraName'].errors['pattern']" translate>
+                                    enteronlyletters
+                                </p>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label translate>jiraNumber</mat-label>
+                            <input matInput placeholder="{{'jiraNumberPlaceholder' | translate}}"
+                                formControlName="jiraNumber">
+                            <mat-error>
+                                <p *ngIf="f['jiraNumber'].errors && f['jiraNumber'].errors['required']" translate>
+                                    required
+                                </p>
+                                <p *ngIf="f['jiraNumber'].errors && f['jiraNumber'].errors['pattern']" translate>
+                                    enteronlynumbers
+                                </p>
+                            </mat-error>
+                        </mat-form-field>
+                    <div class="flex">
+                    <mat-form-field appearance="outline">
+                        <mat-label translate>jiraTask</mat-label>
+                        <input matInput placeholder="{{'jiraTaskPlaceholder' | translate}}" formControlName="jiraTask">
+                        <mat-error>
+                            <p *ngIf="f['jiraTask'].errors && f['jiraTask'].errors['required']" translate>required
+                            </p>
+                        </mat-error>
+                    </mat-form-field>
+                    <button [disabled]="loginForm.invalid" mat-raised-button color="primary" (click)="edit()"
+                        translate>{{"edit" | translate}}</button>
+                        
+                    </div>
+                </div>
+            </form>
+            <mat-form-field appearance="outline" class="" style="width: 80%; margin-top: 20px;">
+                <mat-label translate>result</mat-label>
+                <textarea style="resize: none;" readonly matInput cols="30" rows="10" [(ngModel)]="branch"></textarea>
+                <button mat-icon-button matSuffix [cdkCopyToClipboard]="branch">
+                    <mat-icon>copy_all</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+    </div>
+  
+</div>
+<div class="footer" >
+    <span>© 2022 Muhammed Ali Akşit</span>
+</div>

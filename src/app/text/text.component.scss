@@ -1,0 +1,53 @@
+$konum: start, center, end, space-between, space-around;
+$align-items: start, end, center;
+$max-heigth:100%;
+$max-width:100%;
+$size:500px;
+.flex-direction {
+    flex-direction: column;
+}
+.flex {
+    display: flex;
+}
+
+@each $var in $konum {
+    .center {
+        @if $var ==center {
+            justify-content: $var;
+            align-items: $var;
+        }
+       @extend .flex;
+    }
+}
+.container {
+    margin: 0 200px 0 200px;
+    .branch {
+        @extend .center;
+        @extend .flex-direction;
+        height: $max-heigth;
+        width: $max-width;
+        .formgroup {
+            @extend .center;
+            @extend .flex-direction;
+            width: $size;
+            height: $size;
+            background-color: bisque;
+            padding: 10px;
+            .margin-top {
+                margin-top: 10px
+            }
+            .flex {
+            @extend .flex;
+            @extend .flex-direction;
+            }
+        }
+    }
+}
+.footer {
+    @extend .center;
+    position: absolute;
+    bottom: 0px;
+    width: $max-width;
+    height: 50px;
+    background-color: rgb(186, 185, 125);
+}

@@ -1,0 +1,18 @@
+{
+    "tr":"Türkçe",
+    "en":"English",
+    "changeLanguage":"Change Language",
+    "BranchInverter":"Branch Invertor",
+    "jiraName":"Jira Name",
+    "jiraNamePlaceholder":"Please enter the branch name.",
+    "jiraNumber": "Jira Number" ,
+    "jiraNumberPlaceholder":"Please enter the branch number.", 
+    "jiraTask":"Jira Task",
+    "jiraTaskPlaceholder":"Please enter the branch number.",
+    "edit":"Edit",
+    "result":"Result",
+    "required":"Fill in the field",
+    "enteronlyletters":"Enter only letters",
+    "enteronlynumbers":"Enter only numbers"
+
+}

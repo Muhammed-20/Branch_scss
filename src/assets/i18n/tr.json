@@ -1,0 +1,18 @@
+{
+    "tr":"Türkçe",
+    "en":"English",
+    "changeLanguage":"Dil Değiştir.",
+    "BranchInverter":"Branch Çevirici",
+    "jiraName":"Jira Adı",
+    "jiraNamePlaceholder":"Lütfen branch adını giriniz.",
+    "jiraNumber": "Jira Numarası" ,
+    "jiraNumberPlaceholder":"Lütfen branch numarası giriniz.", 
+    "jiraTask":"Jira Görevi",
+    "jiraTaskPlaceholder":"Lütfen branch görevini giriniz.",
+    "edit":"Düzenle",
+    "result":"Sonuç",
+    "required":"Alanı doldurunuz.",
+    "enteronlyletters":"Sadece harf giriniz.",
+    "enteronlynumbers":"Sadece sayı giriniz."
+  
+}

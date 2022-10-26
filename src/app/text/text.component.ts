@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { TextService } from '../text.service';
 
 @Component({
   selector: 'app-text',
@@ -17,7 +18,7 @@ export class TextComponent implements OnInit {
 
     jiraTask: new FormControl('', [Validators.required])
   })
-  constructor(public translateService: TranslateService) {
+  constructor(public translateService: TranslateService,private services:TextService) {
 
     this.translateService.addLangs(["tr", "en"]);
   }
@@ -48,6 +49,10 @@ export class TextComponent implements OnInit {
     this.branch = newStr.replace(reg2, '-');
   }
   public edit() {
-    this.translate(this.form.jiraName, this.form.jiraNumber, this.form.jiraTask)
+    this.services.translate(this.form.jiraName, this.form.jiraNumber, this.form.jiraTask).subscribe(res => {
+      this.branch = res
+    })
+    
+   
   }
 }

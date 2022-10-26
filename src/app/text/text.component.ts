@@ -28,25 +28,11 @@ export class TextComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  get f(): { [key: string]: AbstractControl } {
+  public get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls
   }
-  get form() {
+  public get form() {
     return this.loginForm.value
-  }
-  public translate(jiraName: any, jiraNumber: any, jiraTask: any) {
-    const JiraName: string = jiraName.trim().toUpperCase();
-    const JiraNumber: string = jiraNumber.trim();
-
-    const JiraTask: string = jiraTask.trim();
-    const Toplam: string = JiraName + ' ' + JiraNumber + ' ' + JiraTask
-    const reg = /\s/g
-    let newStr;
-    newStr = Toplam.replace(reg, '_');
-    const reg1 = /["'!-.,;:?^]/g
-    newStr = newStr.replace(reg1, '');
-    const reg2 = /\_/
-    this.branch = newStr.replace(reg2, '-');
   }
   public edit() {
     this.services.translate(this.form.jiraName, this.form.jiraNumber, this.form.jiraTask).subscribe(res => {
